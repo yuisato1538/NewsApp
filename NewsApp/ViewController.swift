@@ -27,7 +27,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let texts = [titles]
         // 4. delegateとdataSourceを設定
         tableView.delegate = self
         tableView.dataSource = self
@@ -55,7 +54,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // 6. 必要なtableViewメソッド
     // セルの行数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return texts.count
+        return titles.count
     }
     
     // 6. 必要なtableViewメソッド
@@ -63,13 +62,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "Cell")
         
-        cell.textLabel?.text = texts[indexPath.row]
+        cell.textLabel?.text = titles[indexPath.row]
         return cell
     }
     
     // 7. セルがタップされた時
     private func tableView(table: UITableView, didSelectRowAtIndexPath indexPath:IndexPath) {
-        print(texts[indexPath.row])
+        print(titles[indexPath.row])
     }
     
     
