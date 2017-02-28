@@ -24,6 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Alamo()
         
         //let texts = [self.titles]
         
@@ -72,6 +73,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     self.urls.append(article["url"].stringValue)
                     print(self.urls)
                 }
+                self.tableView.reloadData()
             }
         }
         
